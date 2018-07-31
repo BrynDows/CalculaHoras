@@ -7,11 +7,7 @@ public class Lanzador {
 
 	public static final int HOURS_SCHENDULE = 7;
 	public static final int MINUTES_SCHENDULE = 30;
-	
-	/**
-	 * @param hour
-	 * @return
-	 */
+
 	public static int[] format(String hour) {
 		int[] time = new int[2];
 		hour = hour.trim();
