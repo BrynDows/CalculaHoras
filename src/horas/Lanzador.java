@@ -13,7 +13,7 @@ public class Lanzador {
 	public static int[] format(String hour) {
 		int[] time = new int[2];
 		hour = hour.trim();
-		StringTokenizer tokenizer = new StringTokenizer(hour, ":,/*-_!\"·$%&()");
+		StringTokenizer tokenizer = new StringTokenizer(hour, "-,;:_+-*/.");
 		int h = Integer.parseInt(tokenizer.nextToken().trim());
 		int m = Integer.parseInt(tokenizer.nextToken().trim());
 		time[0] = h;
