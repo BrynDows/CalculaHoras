@@ -3,6 +3,8 @@ package horas;
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
+import javax.swing.JOptionPane;
+
 public class Lanzador {
 
 	public static final int HOURS_SCHENDULE = 7;
@@ -16,19 +18,20 @@ public class Lanzador {
 		int m = Integer.parseInt(tokenizer.nextToken().trim());
 		time[0] = h;
 		time[1] = m;
-		
+
 		return time;
 	}
 
 	public static void main(String[] args) {
 
+		int[] hour = format(JOptionPane.showInputDialog("¿A qué hora has entrado?"));
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.HOUR_OF_DAY, HOURS_SCHENDULE);
 		calendar.set(Calendar.MINUTE, MINUTES_SCHENDULE);
-		int[] hour = format(args[0]);
 		calendar.add(Calendar.HOUR, hour[0]);
 		calendar.add(Calendar.MINUTE, hour[1]);
-		System.out.println(calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE));
+		JOptionPane.showMessageDialog(null, "Debes trabajar hasta las " + calendar.get(Calendar.HOUR_OF_DAY) + ":"
+				+ calendar.get(Calendar.MINUTE) + ".");
 
 	}
 }
